@@ -1,0 +1,30 @@
+{% extends 'ikigai/base.html' %}
+
+{% block body %}
+<div class="container">
+	<div class="justify-content-center mt-5">
+		<h2 class="text-info">Please answer the following questions!!</h2>
+	</div>
+	<hr>
+	<form action="{% url 'create' %}" method="POST">
+		{% csrf_token %}
+	<div class="form-group">
+		<label>You love it</label>
+		<textarea class="form-control" rows="3" name="love">{{Profile.love}}</textarea>
+	</div>
+	<div class="form-group">
+		<label>You are great at it</label>
+		<textarea class="form-control" rows="3" name="good">{{Profile.good}}</textarea>
+	</div>
+	<div class="form-group">
+		<label>The world needs it</label>
+		<textarea class="form-control" rows="3" name="worldNeed">{{Profile.worldNeed}}</textarea>
+	</div>
+	<div class="form-group">
+		<label>You are paid for it</label>
+		<textarea class="form-control" rows="3" name="paid">{{Profile.paid}}</textarea>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock %}

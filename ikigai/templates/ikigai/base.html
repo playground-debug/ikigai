@@ -1,0 +1,279 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .venn-container {
+  padding: 25px 25px 25px 200px;
+}
+.venncircle {
+  padding: 18px;
+  width: 280px;
+  height: 280px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: color 0.5s linear, background-color 0.5s linear;
+  -moz-transition: color 0.5s linear, background-color 0.5s linear;
+  -o-transition: color 0.5s linear, background-color 0.5s linear;
+  transition: color 0.5s linear, background-color 0.5s linear;
+}
+.venncircle > a {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: .004em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.venncirctop {
+  padding: 18px;
+  width: 280px;
+  height: 280px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: color 0.5s linear, background-color 0.5s linear;
+  -moz-transition: color 0.5s linear, background-color 0.5s linear;
+  -o-transition: color 0.5s linear, background-color 0.5s linear;
+  transition: color 0.5s linear, background-color 0.5s linear;
+  margin-bottom: -130px;
+  margin-left: -70px;
+  background-color: #5c5b59;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(92, 91, 89, 0.5);
+  z-index: 1;
+  position: relative;
+}
+.venncirctop > a {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: .004em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.venncirctop:hover {
+  z-index: 5;
+  background-color: #6A6561;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(106, 101, 97, 0.9);
+}
+.venncirclft {
+  padding: 18px;
+  width: 280px;
+  height: 280px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: color 0.5s linear, background-color 0.5s linear;
+  -moz-transition: color 0.5s linear, background-color 0.5s linear;
+  -o-transition: color 0.5s linear, background-color 0.5s linear;
+  transition: color 0.5s linear, background-color 0.5s linear;
+  margin-left: -157px;
+  background-color: #093d5c;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(9, 61, 92, 0.5);
+  z-index: 2;
+}
+.venncirclft > a {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: .004em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.venncirclft:hover {
+  z-index: 5;
+  background-color: #37688C;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(55, 104, 140, 0.9);
+}
+.venncircrt {
+  padding: 18px;
+  width: 280px;
+  height: 280px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: color 0.5s linear, background-color 0.5s linear;
+  -moz-transition: color 0.5s linear, background-color 0.5s linear;
+  -o-transition: color 0.5s linear, background-color 0.5s linear;
+  transition: color 0.5s linear, background-color 0.5s linear;
+  margin-left: 17px;
+  background-color: #5e577b;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(94, 87, 123, 0.5);
+  z-index: 3;
+  text-align: right;
+}
+.venncircrt > a {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: .004em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.venncircrt:hover {
+  z-index: 5;
+  background-color: #625F75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(98, 95, 117, 0.9);
+}
+.venncircbtm {
+  padding: 18px;
+  width: 280px;
+  height: 280px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: color 0.5s linear, background-color 0.5s linear;
+  -moz-transition: color 0.5s linear, background-color 0.5s linear;
+  -o-transition: color 0.5s linear, background-color 0.5s linear;
+  transition: color 0.5s linear, background-color 0.5s linear;
+  top: 90px;
+  margin-right: 100px;
+  margin-left: -70px;
+  text-align: center;
+  background-color: #627746;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(98, 119, 70, 0.5);
+  z-index: 1;
+  position: relative;
+}
+.venncircbtm > a {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: .004em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.venncircbtm:hover {
+  z-index: 5;
+  background-color: #3a4e20;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background-color: rgba(58, 78, 32, 0.9);
+}
+.venntxttop {
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  top: 10px;
+}
+.venntxttop:hover {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+.venntxtrt {
+  margin: 0 0 0 87px;
+  display: inline-block;
+  position: relative;
+  top: 63px;
+  z-index: 5;
+}
+.venntxtrt:hover {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+
+.venntxtlft {
+  width: 70%;
+  display: inline-block;
+  position: relative;
+  top: 63px;
+  z-index: 5;
+}
+.venntxtlft:hover {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+.venntxtbtm {
+  text-align: center;
+  display: inline-block;
+  width: 70%;
+  position: relative;
+  top: 103px;
+}
+.venntxtbtm:hover {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+
+
+    </style>
+
+    <title>Ikigai</title>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'ikigai/logo.jpg' %}" height="40" width="40" class="d-inline-block align-top">
+                    Ikigai
+                </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link">Hello, {{user.username}}</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create' %}">My Ikigai</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
+                        <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                            {% csrf_token %}
+                            <button id="signOutBtn" type="submit">Logout</button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'loginuser' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

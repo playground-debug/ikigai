@@ -1,0 +1,21 @@
+{% extends 'ikigai/base.html' %}
+
+{% block body %}
+<div class="container">
+<div class="justify-content-center mt-5">
+	<div class="col-md-5">
+		<h2 class="text-info">All Ikigai</h2>
+	</div>
+</div>
+<div class="justify-content-center">
+	<ul class="list-group list-group-flush">
+		{% for profile in Profile %}
+			<li class="list-group-item"><a href="{% url 'show' profile.id %}">{{profile.user.username}}</a></li>
+		{% endfor %}
+		{% if not Profile %}
+			<p class="text-center text-warning">No Ikigai Yet!</p>
+		{% endif %}
+	</ul>
+</div>
+</div>
+{% endblock %}

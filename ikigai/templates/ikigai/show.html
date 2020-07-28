@@ -1,0 +1,64 @@
+{% extends 'ikigai/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+	<div class="justify-content-center mt-5">
+		<div class="col-md-5">
+			<h2 class="text-info">{{Profile.user.username}}'s IKIGAI Map</h2>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-6">
+	<div class="row-fluid">
+		<div class="span9">
+
+			<div class="venn-container">
+
+				<div class="venncirctop">
+					<a class="venntxttop">
+						<br>
+					&nbsp; &nbsp; &nbsp; {{Profile.love}}</a>
+				</div>
+
+
+				<div class="venncirclft">
+					<a class="venntxtlft" href="#">
+						<br>
+					{{Profile.good}}</a>
+				</div>
+
+				<div class="venncircrt">
+					<a class="venntxtrt" href="#">
+						<br>
+					{{Profile.worldNeed}}</a>
+				</div>
+
+
+				<div class="venncircbtm">
+					<a class="venntxtbtm" href="#">
+						<br>
+					{{Profile.paid}}</a>
+				</div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="col-6">
+		<img src="{% static 'ikigai/ikigai.png' %}" height="300" width="300" class="d-inline-block align-top">
+	</div>
+	</div>
+</div>
+{% endblock %}
